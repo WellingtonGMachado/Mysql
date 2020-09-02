@@ -1,0 +1,36 @@
+/*INSTALANDO MySQUL no CMD*/
+
+mysql install -h localhost -u root -p [ENTER]
+
+/*CRIANDO BANCO DE DADOS:*/
+CREATE DATABASE nome_banco;
+
+/*DELETANDO DATABASE*/
+DROP DATABASE nome_banco;
+
+/*PRINTANDO BANCOS DE DADOS EXISTENTES:*/
+SHOW DATABASES;
+
+/*SELECIONANDO BANCO DE DADOS:*/
+USE nome_banco;
+
+/*CRIANDO TABELA:*/
+CREATE TABLE nometabela (nome VARCHAR(50), idade VARCHAR (10), sexo VARCHAR(15));
+
+/*MOSTRANDO ESTRUTURA DA TABELA:*/
+DESCRIBE nome_tabela;
+
+/*INSERINDO DADOS NA TABELA:*/
+INSERT INTO nome_tabela (nome, idade, genero) VALUES ("Wellington Gomes", "27 anos", "Masculino");
+
+/*MOSTRANDO DADOS DA TABELA*/
+SELECT *FROM nome_tabela;
+
+/*MOSTRANDO DADO ESPECIFICO:*/
+SELECT *FROM nome_tabela WHERE nome = "Wellington Gomes";
+
+/*DELETANDO DADOS DA TABELA:*/
+DELETE FROM nome_tabela;
+
+/*DELETANDO DADOS ESPECIFICOS DA TABELA:*/
+DELETE FROM nome_tabela WHERE nome = "Wellington Gomes";
