@@ -1,0 +1,72 @@
+TRABALHANDO COM O SEQUELIZE(JS):
+
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('test', 'root', '****', {
+host: "localhost", 
+dialect: 'mysql'
+}); // nome do banco, usuario, senha, 
+host (em qual maquina, servidor estou rodando), dialect: mysql (qual banco
+de dados quero me conectar)
+_________________________________
+
+COMO SE CONECTAR A UM BANCO DE DADOS USANDO O SEQUELIZE:
+
+sequelize authenticate().then(function(){
+console.log ("Conectado com sucesso!")
+}).catch(function(erro){
+	console.log ("Falha ao se conectar:" + erro)
+});
+// ESSA FUNÇÃO IRA TESTAR O "sequelize authenticate"
+   se conectar, ira chamar a função "then", se não conectar
+   chamará a função "catch"
+ 
+
+const Sequelize = require('sequelize')
+const sequelize = new Sequelize('test', 'root', '051092', {
+    host: "localhost",
+    dialect: 'mysql'
+    
+});
+_______________________________________________
+CRIANDO TABELA COM O SEQUELIZE:
+
+const Postagem = sequelize.define('postagens', {
+    titulo: {
+        type: Sequelize.STRING
+    },
+    conteudo: {
+        type: Sequelize.TEXT
+    }
+})
+
+Postagem.create({
+    titulo: "ERA UMA VEZ, O FIM CAIU NO BURACO, DAI O NOME HISTORIA SEM FIM!",
+    conteudo: "PUM TLG! pum tlg, MODAFOCKA, PUM TLG! pum tlg"
+}); //INSERINDO DADOS NA TABELA
+
+const Usuario = sequelize.define('usuarios', {
+    nome: {
+        type: Sequelize.STRING
+    },
+    sobrenome: {
+        type: Sequelize.STRING
+    },
+    idade: {
+        type: Sequelize.INTEGER
+    },
+    email: {
+        type: Sequelize.STRING
+    }
+});
+
+Usuario.create({
+    nome: "Wellington",
+    sobrenome: "Gomes",
+    idade: 27,
+    email: "tecwell@outlook.com"
+
+}); //INSERINDO DADOS NA TABELA
+
+//Postagem.sync({ force: true }) //FORÇANDO CRIAÇÃO DE TABELA
+//Usuario.sync({ force: true })
+
